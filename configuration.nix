@@ -115,6 +115,7 @@
   environment.systemPackages = with pkgs; [
     neovim 
     kitty
+    picom
     autotiling
     polybar
     ranger

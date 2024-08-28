@@ -91,11 +91,15 @@
       startup = [
 	{
 	  always = true; 
-	  command = "autotiling";
+	  command = "pkill autotiling; autotiling";
 	}
 	{
 	  always = true;
 	  command = "xset -b";
+	}
+	{
+	  always = true;
+	  command = "pkill picom; picom";
 	}
       ];
       bars = [
@@ -119,6 +123,8 @@
       confirm_os_window_close = 0;
       font_size = 16;
       enable_audio_bell = "no";
+      dynamic_background_opacity = "yes";
+      background_opacity = "0.9";
     };
   };
 

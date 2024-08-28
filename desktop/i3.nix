@@ -9,5 +9,8 @@
 	enable = true;
       };
     };
+    picom = {
+      enable = true;
+    };
   };
 }
