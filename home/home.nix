@@ -79,6 +79,7 @@
     config = {
       modifier = "Mod4";
       terminal = "kitty";
+      menu = "rofi -show-icons -display-drun \" >\" -show drun";
       gaps = {
         inner = 7;
         outer = 7;
@@ -173,6 +174,166 @@
 	date = "%d.%m.%y";
 	time = "%H:%M";
 	label = "%time%  %date%";
+      };
+    };
+  };
+  
+  # inspired by https://gitlab.com/nesstero/catppuccin/-/blob/master/rofi/config.rasi
+  programs.rofi = {
+    enable = true;
+    theme = 
+    let
+      inherit (config.lib.formats.rasi) mkLiteral;
+    in {
+      "*" = {
+	font = "JetBrainsMono Nerd Font 16";
+	foreground = mkLiteral "#DADAE8";
+	background = mkLiteral "#1E1E2E";
+	active-background = mkLiteral "#A4B9EF";
+	urgent-background  = mkLiteral "#E38C8F";
+	urgent-foreground = mkLiteral "@foreground";
+	selected-background = mkLiteral "@active-background";
+	selected-urgent-background = mkLiteral "@urgent-background";
+	selected-active-background = mkLiteral "@active-background";
+	separatorcolor = mkLiteral "@active-background";
+	bordercolor = mkLiteral "@active-background";
+      };
+
+      "window" = {
+	background-color = mkLiteral "@background";
+	border = 2;
+	border-radius = 10;
+	border-color = mkLiteral "@bordercolor";
+	padding = 5;
+	width = mkLiteral "40%";
+      };
+
+      "mainbox" = {
+	border = 0;
+	padding = 0;
+	background-color = mkLiteral "inherit";
+      };
+
+      "message" = {
+	border = mkLiteral "0px dash 0px 0px";
+	border-color = mkLiteral "@separatorcolor";
+	padding = mkLiteral "1px";
+      };
+
+      "textbox" = {
+	text-color = mkLiteral "@foreground";
+      };
+
+      "listview" = {
+	fixed-height = 0;
+	background-color = mkLiteral "@background";
+	border = mkLiteral "2px dash 0px 0px";
+	border-color = mkLiteral "@bordercolor";
+	spacing = mkLiteral "2px";
+	scrollbar = false;
+	padding = mkLiteral "2px 0px 0px";
+	lines = 7;
+      };
+
+      "element" = {
+	border = 0;
+	padding = mkLiteral "1px 7px";
+      };
+
+      "element-text" = {
+	background-color = mkLiteral "inherit";
+	text-color = mkLiteral "inherit";
+      };
+
+      "element-icon" = {
+	background-color = mkLiteral "inherit";
+	margin = mkLiteral "0px 10px 0px 0px";
+	size = mkLiteral "20px";
+      };
+
+      "element.normal.normal" = {
+	background-color = mkLiteral "@background";
+	text-color = mkLiteral "@foreground";
+      };
+
+      "element.normal.urgent" = {
+	background-color = mkLiteral "@urgent-background";
+	text-color = mkLiteral "@urgent-foreground";
+      };
+
+      "element.normal.active" = {
+	background-color = mkLiteral "@active-background";
+	text-color = mkLiteral "@foreground";
+      };
+
+      "element.selected.normal" = {
+	background-color = mkLiteral "@selected-background";
+	border-radius = 10;
+	text-color = mkLiteral "@background";
+      };
+
+      "element.selected.urgent" = {
+	background-color = mkLiteral "@selected-urgent-background";
+	text-color = mkLiteral "@background";
+      };
+
+      "element.selected.active" = {
+	background-color = mkLiteral "@selected-active-background";
+	text-color = mkLiteral "@background";
+      };
+
+      "element.alternate.normal" = {
+	background-color = mkLiteral "@background";
+	text-color = mkLiteral "@foreground";
+      };
+
+      "element.alternate.urgent" = {
+	background-color = mkLiteral "@urgent-background";
+	text-color = mkLiteral "@foreground";
+      };
+
+      "element.alternate.active" = {
+	background-color = mkLiteral "@active-background";
+	text-color = mkLiteral "@foreground";
+      };
+
+      "button.selected" = {
+	background-color = mkLiteral "@selected-background";
+	text-color = mkLiteral "@foreground";
+      };
+
+      "inputbar" = {
+	spacing = 0;
+	text-color = mkLiteral "@foreground";
+	background-color = mkLiteral "@background";
+	padding = mkLiteral "1px";
+	children = mkLiteral "[ prompt,textbox-prompt-colon,entry,case-indicator ]";
+      };
+
+      "case-indicator" = {
+	spacing = 0;
+	background-color = mkLiteral "inherit";
+	text-color = mkLiteral "@foreground";
+      };
+
+      "entry" = {
+	spacing = 0;
+	background-color = mkLiteral "inherit";
+	text-color = mkLiteral "@foreground";
+      };
+
+      "prompt" = {
+	spacing = 0;
+	background-color = mkLiteral "inherit";
+	text-color = mkLiteral "@foreground";
+      };
+
+      "textbox-prompt-colon" = {
+	expand = false;
+	str = "";
+	margin = mkLiteral "0px 0.3em 0em 0em";
+	text-color = mkLiteral "@foreground";
+	background-color = mkLiteral "inherit";
       };
     };
   };

@@ -118,6 +118,7 @@
     picom
     autotiling
     polybar
+    rofi
     ranger
 
     wget
