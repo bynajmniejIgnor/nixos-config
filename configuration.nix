@@ -54,12 +54,6 @@
     LC_TIME = "pl_PL.UTF-8";
   };
 
-  # Configure keymap in X11
-  #services.xserver.xkb = {
-  #  layout = "pl";
-  #  variant = "";
-  #};
-
   # Configure console keymap
   console.keyMap = "pl2";
 
@@ -122,6 +116,7 @@
     neovim 
     kitty
     autotiling
+    polybar
     ranger
 
     wget
@@ -161,5 +156,4 @@
   # Before changing this value read the documentation for this option
   # (e.g. man configuration.nix or on https://nixos.org/nixos/options.html).
   system.stateVersion = "24.05"; # Did you read the comment?
-
 }

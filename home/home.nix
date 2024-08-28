@@ -98,11 +98,18 @@
 	  command = "xset -b";
 	}
       ];
+      bars = [
+	{command = "pkill polybar; polybar top &";}
+      ];
     };
     extraConfig = '' 
       bindsym Mod4+F2 exec firefox	
       bindsym --release Mod4+Shift+S exec scrot -s -f -o "/tmp/image.png" && xclip -selection clipboard -t image/png -i /tmp/image.png
     '';
+  };
+
+  programs.i3blocks = {
+    enable = false;
   };
 
   programs.kitty = {
@@ -124,6 +131,42 @@
 
   programs.ranger = {
     enable = true;
+  };
+
+  services.polybar = {
+    enable = true;
+    script = "polybar top &";
+    config = {
+      "bar/top" = {
+	width = "100%";
+	height = "3%";
+	radius = 0;
+	modules-center = "xworkspaces date";
+      };
+
+      "module/xworkspaces" = {
+        type = "internal/xworkspaces";
+        label-active = "%name%";
+        label-active-padding = 1;
+
+        label-occupied = "%name%";
+        label-occupied-padding = 1;
+
+        label-urgent = "%name%";
+        label-urgent-padding = 1;
+
+        label-empty = "%name%";
+        label-empty-padding = 1;
+      };
+
+      "module/date" = {
+	type = "internal/date";
+	internal = 5;
+	date = "%d.%m.%y";
+	time = "%H:%M";
+	label = "%time%  %date%";
+      };
+    };
   };
 
   # Let Home Manager install and manage itself.
