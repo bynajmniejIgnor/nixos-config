@@ -109,6 +109,7 @@
     extraConfig = '' 
       bindsym Mod4+F2 exec firefox	
       bindsym --release Mod4+Shift+S exec scrot -s -f -o "/tmp/image.png" && xclip -selection clipboard -t image/png -i /tmp/image.png
+      exec i3-msg workspace 1
     '';
   };
 
