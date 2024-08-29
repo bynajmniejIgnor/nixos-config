@@ -131,6 +131,7 @@
     libsForQt5.kolourpaint
     discord
     blueman
+    ani-cli
   ];
 
   # One true default editor
