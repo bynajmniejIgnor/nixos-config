@@ -128,6 +128,7 @@
     kdePackages.okular
     xclip
     scrot
+    libsForQt5.kolourpaint
   ];
 
   # One true default editor
