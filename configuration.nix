@@ -129,6 +129,7 @@
     xclip
     scrot
     libsForQt5.kolourpaint
+    discord
   ];
 
   # One true default editor
