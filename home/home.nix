@@ -146,26 +146,56 @@
     enable = true;
     script = "polybar top &";
     config = {
+      "colors" = {
+	background = "#282A2E";
+	background-alt = "#373B41";
+	foreground = "#C5C8C6";
+	primary = "#F0C674";
+	secondary = "#8ABEB7";
+	alert = "#A54242";
+	disabled = "#707880";
+      };
       "bar/top" = {
+	font-0 = "JetBrainsMono:size=16;2";
 	width = "100%";
-	height = "3%";
-	radius = 0;
-	modules-center = "xworkspaces date";
+	height = "30";
+
+	background = "$\{colors.background\}";
+	foreground = "$\{colors.foreground\}";
+	line-size = "3pt";
+	border-size = "4pt";
+    
+	border-color = "#00000000";
+	padding-left = 0;
+	padding-right = 1;
+	module-margin = 1;
+	separator = "|";
+	separator-foreground = "$\{colors.disabled\}";
+	modules-left = "xworkspaces";
+	modules-right = "filesystem pulseaudio xkeyboard memory cpu wlan eth battery1 battery0 date";
+	cursor-click = "pointer";
+	cursor-scroll = "ns-resize";
+	enable-ipc = true;
       };
 
       "module/xworkspaces" = {
-        type = "internal/xworkspaces";
-        label-active = "%name%";
-        label-active-padding = 1;
+	type = "internal/xworkspaces";
 
-        label-occupied = "%name%";
-        label-occupied-padding = 1;
+	label-active = "%name%";
+	label-active-background = "$\{colors.background-alt\}";
+	label-active-underline= "$\{colors.primary\}";
+	label-active-padding = 1;
 
-        label-urgent = "%name%";
-        label-urgent-padding = 1;
+	label-occupied = "%name%";
+	label-occupied-padding = 1;
 
-        label-empty = "%name%";
-        label-empty-padding = 1;
+	label-urgent = "%name%";
+	label-urgent-background = "$\{colors.alert\}";
+	label-urgent-padding = 1;
+
+	label-empty = "%name%";
+	label-empty-foreground = "$\{colors.disabled\}";
+	label-empty-padding = 1;
       };
 
       "module/date" = {
@@ -175,6 +205,23 @@
 	time = "%H:%M";
 	label = "%time%  %date%";
       };
+
+      "module/battery0" = {
+	type = "internal/battery";
+	full-at = 99;
+	low-at = 5;
+	battery = "BAT0";
+	poll-interval = 5;
+      };
+
+      "module/battery1" = {
+	type = "internal/battery";
+	full-at = 99;
+	low-at = 5;
+	battery = "BAT1";
+	poll-interval = 5;
+      };
+
     };
   };
   
