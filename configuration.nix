@@ -132,6 +132,7 @@
     discord
     blueman
     ani-cli
+    feh
   ];
 
   # One true default editor
