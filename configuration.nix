@@ -130,6 +130,7 @@
     scrot
     libsForQt5.kolourpaint
     discord
+    blueman
   ];
 
   # One true default editor
