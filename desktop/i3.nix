@@ -8,6 +8,7 @@
       windowManager.i3 = {
 	enable = true;
       };
+      desktopManager.wallpaper.mode = "fill";
     };
     picom = {
       enable = true;
