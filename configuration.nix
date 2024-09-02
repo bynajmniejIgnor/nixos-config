@@ -134,6 +134,7 @@
     networkmanagerapplet
     ani-cli
     feh
+    ntfs3g
   ];
 
   # One true default editor
