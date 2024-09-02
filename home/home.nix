@@ -122,6 +122,9 @@
     enable = true;
     theme = "Catppuccin-Macchiato";
     settings = {
+      font_family = "JetBrainsMono Nerd Font Mono";
+      bold_font = "JetBrainsMono Nerd Font Mono Extra Bold";
+      bold_italic_font = "JetBrainsMono Nerd Font Mono Extra Bold Italic";
       confirm_os_window_close = 0;
       font_size = 16;
       enable_audio_bell = "no";
@@ -150,7 +153,7 @@
     config = {
       "colors" = {
 	background = "#282A2E";
-	background-alt = "#373B41";
+	background-alt = "#88373B41";
 	foreground = "#C5C8C6";
 	primary = "#8AADF4";
 	secondary = "#8ABEB7";
@@ -162,19 +165,20 @@
 	width = "100%";
 	height = "30";
 
-	background = "$\{colors.background\}";
+	background = "#00000000";
 	foreground = "$\{colors.foreground\}";
 	line-size = "3pt";
 	border-size = "4pt";
     
 	border-color = "#00000000";
-	padding-left = 0;
-	padding-right = 1;
-	module-margin = 1;
+	padding-left = 2;
+	padding-right = 2;
 	separator = "|";
 	separator-foreground = "$\{colors.disabled\}";
+	separator-background = "$\{colors.background-alt\}";
 	modules-left = "xworkspaces";
-	modules-right = "filesystem pulseaudio xkeyboard memory cpu wlan eth battery1 battery0 date";
+	modules-center = "blank";
+	modules-right = "battery1 battery0 date";
 	cursor-click = "pointer";
 	cursor-scroll = "ns-resize";
 	enable-ipc = true;
@@ -182,22 +186,26 @@
 
       "module/xworkspaces" = {
 	type = "internal/xworkspaces";
+	background = "$\{colors.background\}";
+	foreground = "$\{colors.foreground\}";
 
 	label-active = "%name%";
 	label-active-background = "$\{colors.background-alt\}";
 	label-active-underline= "$\{colors.primary\}";
-	label-active-padding = 1;
+	label-active-padding = 2;
 
 	label-occupied = "%name%";
-	label-occupied-padding = 1;
+	label-occupied-background = "$\{colors.background-alt\}";
+	label-occupied-padding = 2;
 
 	label-urgent = "%name%";
 	label-urgent-background = "$\{colors.alert\}";
-	label-urgent-padding = 1;
+	label-urgent-padding = 2;
 
 	label-empty = "%name%";
+	label-empty-background = "$\{colors.background-alt\}";
 	label-empty-foreground = "$\{colors.disabled\}";
-	label-empty-padding = 1;
+	label-empty-padding = 2;
       };
 
       "module/date" = {
@@ -206,30 +214,39 @@
 	date = "%d.%m.%y";
 	time = "%H:%M";
 	label = "%time%  %date%";
+	label-padding = 2;
+	format-background = "$\{colors.background-alt\}";
       };
 
       "module/battery0" = {
 	type = "internal/battery";
 	full-at = 99;
-	low-at = 5;
+	low-at = 2;
 	battery = "BAT0";
 	poll-interval = 5;
+	
+	format-charging-background = "$\{colors.background-alt\}";
+	format-discharging-background = "$\{colors.background-alt\}";
+	format-full-background = "$\{colors.background-alt\}";
+	label-charging-padding = 1;
+	label-discharging-padding = 1;
+	label-full-padding = 1;
       };
 
       "module/battery1" = {
 	type = "internal/battery";
 	full-at = 99;
-	low-at = 5;
+	low-at = 2;
 	battery = "BAT1";
 	poll-interval = 5;
-      };
 
-      "module/nm-launcher" = {
-	type = "custom/text";
-	format = "wifi";
-	click-left = "nm-connection-editor";
+	format-charging-background = "$\{colors.background-alt\}";
+	format-discharging-background = "$\{colors.background-alt\}";
+	format-full-background = "$\{colors.background-alt\}";
+	label-charging-padding = 1;
+	label-discharging-padding = 1;
+	label-full-padding = 1;
       };
-
     };
   };
   
