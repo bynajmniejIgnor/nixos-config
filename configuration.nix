@@ -131,6 +131,7 @@
     libsForQt5.kolourpaint
     discord
     blueman
+    networkmanagerapplet
     ani-cli
     feh
   ];

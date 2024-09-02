@@ -135,6 +135,8 @@
     shellAliases = {
       ra = "ranger --choosedir=$HOME/.rangerdir; LASTDIR=`cat $HOME/.rangerdir`; cd \"$LASTDIR\"";
       v = "nvim";
+      nrs = "sudo nixos-rebuild switch --flake .";
+      ns = "nix-shell -p";
     };
   };
 
@@ -150,7 +152,7 @@
 	background = "#282A2E";
 	background-alt = "#373B41";
 	foreground = "#C5C8C6";
-	primary = "#F0C674";
+	primary = "#8AADF4";
 	secondary = "#8ABEB7";
 	alert = "#A54242";
 	disabled = "#707880";
@@ -220,6 +222,12 @@
 	low-at = 5;
 	battery = "BAT1";
 	poll-interval = 5;
+      };
+
+      "module/nm-launcher" = {
+	type = "custom/text";
+	format = "wifi";
+	click-left = "nm-connection-editor";
       };
 
     };
