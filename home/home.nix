@@ -157,8 +157,9 @@
 	foreground = "#C5C8C6";
 	primary = "#8AADF4";
 	secondary = "#8ABEB7";
-	alert = "#A54242";
+	alert = "#88ED8796";
 	disabled = "#707880";
+	success = "#88A6DA95";
       };
       "bar/top" = {
 	font-0 = "JetBrainsMono:size=16;2";
@@ -178,7 +179,7 @@
 	separator-background = "$\{colors.background-alt\}";
 	modules-left = "xworkspaces";
 	modules-center = "blank";
-	modules-right = "battery1 battery0 date";
+	modules-right = "xkeyboard battery1 battery0 date";
 	cursor-click = "pointer";
 	cursor-scroll = "ns-resize";
 	enable-ipc = true;
@@ -225,27 +226,45 @@
 	battery = "BAT0";
 	poll-interval = 5;
 	
+
 	format-charging-background = "$\{colors.background-alt\}";
 	format-discharging-background = "$\{colors.background-alt\}";
-	format-full-background = "$\{colors.background-alt\}";
+	format-full-background = "$\{colors.success\}";
+	format-low-background = "$\{colors.alert\}";
 	label-charging-padding = 1;
 	label-discharging-padding = 1;
 	label-full-padding = 1;
+	label-low-padding = 1;
       };
 
       "module/battery1" = {
 	type = "internal/battery";
 	full-at = 99;
-	low-at = 2;
+	low-at = 5;
 	battery = "BAT1";
 	poll-interval = 5;
 
 	format-charging-background = "$\{colors.background-alt\}";
 	format-discharging-background = "$\{colors.background-alt\}";
-	format-full-background = "$\{colors.background-alt\}";
+	format-full-background = "$\{colors.success\}";
+	format-low-background = "$\{colors.alert\}";
 	label-charging-padding = 1;
 	label-discharging-padding = 1;
 	label-full-padding = 1;
+	label-low-padding = 1;
+      };
+
+      "module/xkeyboard" = {
+	type = "internal/xkeyboard";
+	blacklist-0 = "num lock";
+	blacklist-1 = "scroll lock";
+	label-layout = "";
+	label-indicator-on-capslock-padding = 1;
+	label-indicator-off-capslock-padding = 1;
+	label-indicator-on-capslock = "Caps on";
+	label-indicator-off-capslock = "Caps off";
+	label-indicator-on-capslock-background = "$\{colors.alert\}";
+	label-indicator-off-capslock-background = "$\{colors.background-alt\}";
       };
     };
   };
@@ -273,7 +292,7 @@
 
       "window" = {
 	background-color = mkLiteral "@background";
-	border = 2;
+	border = 3;
 	border-radius = 10;
 	border-color = mkLiteral "@bordercolor";
 	padding = 5;
