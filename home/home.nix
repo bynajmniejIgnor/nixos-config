@@ -112,7 +112,8 @@
       ];
     };
     extraConfig = '' 
-      bindsym Mod4+F2 exec firefox	
+      bindsym Mod4+F2 exec pamixer -d 5 
+      bindsym Mod4+F3 exec pamixer -i 5 
       bindsym --release Mod4+Shift+S exec scrot -s -f -o "/tmp/image.png" && xclip -selection clipboard -t image/png -i /tmp/image.png
       bindsym Mod4+F6 exec --no-startup-id sudo /run/current-system/sw/bin/light -A 5
       bindsym Mod4+F5 exec --no-startup-id sudo /run/current-system/sw/bin/light -U 5
@@ -169,7 +170,9 @@
 	success = "#88A6DA95";
       };
       "bar/top" = {
-	font-0 = "JetBrainsMono:size=16;2";
+	font-0 = "JetBrainsMonoNL Nerd Font Mono,JetBrainsMonoNL NFM,JetBrainsMonoNL NFM Medium:size=15;2";
+	font-1 = "JetBrainsMonoNL Nerd Font Mono,JetBrainsMonoNL NFM,JetBrainsMonoNL NFM Medium:size=15;2";
+	font-2 = "JetBrainsMonoNL Nerd Font Mono,JetBrainsMonoNL NFM,JetBrainsMonoNL NFM Medium:size=24;4";
 	width = "100%";
 	height = "30";
 
@@ -185,7 +188,7 @@
 	separator-foreground = "$\{colors.disabled\}";
 	separator-background = "$\{colors.background-alt\}";
 	modules-left = "xworkspaces";
-	modules-right = "xkeyboard backlight battery1 battery0 tray date";
+	modules-right = "xkeyboard alsa backlight battery1 battery0 tray date";
 	cursor-click = "pointer" ;
 	cursor-scroll = "ns-resize";
 	enable-ipc = true;
@@ -217,22 +220,20 @@
 
       "module/date" = {
 	type = "internal/date";
-	internal = 5;
 	date = "%d.%m.%y";
 	time = "%H:%M";
 	label = "%time%  %date%";
-	label-padding = 2;
+	label-padding = 1;
 	format-background = "$\{colors.background-alt\}";
       };
 
       "module/battery0" = {
 	type = "internal/battery";
-	full-at = 99;
-	low-at = 2;
+	full-at = 90;
+	low-at = 10;
 	battery = "BAT0";
 	poll-interval = 5;
 	
-
 	format-charging-background = "$\{colors.background-alt\}";
 	format-discharging-background = "$\{colors.background-alt\}";
 	format-full-background = "$\{colors.success\}";
@@ -245,8 +246,8 @@
 
       "module/battery1" = {
 	type = "internal/battery";
-	full-at = 99;
-	low-at = 5;
+	full-at = 90;
+	low-at = 10;
 	battery = "BAT1";
 	poll-interval = 5;
 
@@ -283,13 +284,35 @@
       "module/backlight" = {
 	type = "internal/backlight";
 	format = "<ramp>";
-	ramp-0 = "🌕";
-	ramp-1 = "🌔";
-	ramp-2 = "🌓";
-	ramp-3 = "🌒";
-	ramp-4 = "🌑";
+	ramp-0 = "%\{T3\}";
+	ramp-1 = "%\{T3\}";
+	ramp-2 = "%\{T3\}";
+	ramp-3 = "%\{T3\}";
+	ramp-4 = "%\{T3\}";
+	ramp-5 = "%\{T3\}";
+	ramp-6 = "%\{T3\}";
+	ramp-7 = "%\{T3\}";
+	ramp-8 = "%\{T3\}";
+	ramp-9 = "%\{T3\}";
+	ramp-10 = "%\{T3\}";
+	ramp-11 = "%\{T3\}";
+	ramp-12 = "%\{T3\}";
+	ramp-13 = "%\{T3\}";
+	ramp-14 = "%\{T3\}";
 	format-background = "$\{colors.background-alt\}";
 	format-padding = 1;
+      };
+
+      "module/alsa" = {
+	type = "internal/alsa";
+	format-volume = "<ramp-volume>";
+	format-volume-padding = 1;
+	format-volume-background = "$\{colors.background-alt\}";
+	label-muted = "%\{T3\}";
+	ramp-volume-0 = "%\{T3\}";
+	ramp-volume-1 = "%\{T3\}";
+	ramp-volume-2 = "%\{T3\}";
+	ramp-headphones-0 = "%\{T3\}";
       };
     };
   };

@@ -148,6 +148,9 @@
     feh
     ntfs3g
     light
+    pavucontrol
+    pamixer
+    spotify
   ];
 
   # One true default editor
