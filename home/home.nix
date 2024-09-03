@@ -237,6 +237,7 @@
 	format-charging-background = "$\{colors.background-alt\}";
 	format-discharging-background = "$\{colors.background-alt\}";
 	format-full-background = "$\{colors.success\}";
+	format-low = "<label-low>";
 	format-low-background = "$\{colors.alert\}";
 	label-charging-padding = 1;
 	label-discharging-padding = 1;
@@ -254,6 +255,7 @@
 	format-charging-background = "$\{colors.background-alt\}";
 	format-discharging-background = "$\{colors.background-alt\}";
 	format-full-background = "$\{colors.success\}";
+	format-low = "<label-low>";
 	format-low-background = "$\{colors.alert\}";
 	label-charging-padding = 1;
 	label-discharging-padding = 1;
@@ -309,6 +311,8 @@
 	format-volume-padding = 1;
 	format-volume-background = "$\{colors.background-alt\}";
 	label-muted = "%\{T3\}";
+	label-muted-padding = 1;
+	label-muted-background = "$\{colors.background-alt\}";
 	ramp-volume-0 = "%\{T3\}";
 	ramp-volume-1 = "%\{T3\}";
 	ramp-volume-2 = "%\{T3\}";
