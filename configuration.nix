@@ -98,6 +98,18 @@
     };
   };
 
+  security.sudo.extraRules = [
+    {
+      groups = [ "wheel" ];
+      commands = [
+	{
+	  command = "/run/current-system/sw/bin/light";
+	  options = [ "SETENV" "NOPASSWD" ];
+	}
+      ];
+    }
+  ];
+
   fonts.packages = with pkgs; [
     (nerdfonts.override { fonts = [ "JetBrainsMono" ]; })
     material-design-icons
@@ -135,6 +147,7 @@
     ani-cli
     feh
     ntfs3g
+    light
   ];
 
   # One true default editor

@@ -114,6 +114,8 @@
     extraConfig = '' 
       bindsym Mod4+F2 exec firefox	
       bindsym --release Mod4+Shift+S exec scrot -s -f -o "/tmp/image.png" && xclip -selection clipboard -t image/png -i /tmp/image.png
+      bindsym Mod4+F6 exec --no-startup-id sudo /run/current-system/sw/bin/light -A 5
+      bindsym Mod4+F5 exec --no-startup-id sudo /run/current-system/sw/bin/light -U 5
       exec i3-msg workspace 1
     '';
   };
@@ -143,6 +145,7 @@
       ra = "ranger --choosedir=$HOME/.rangerdir; LASTDIR=`cat $HOME/.rangerdir`; cd \"$LASTDIR\"";
       v = "nvim";
       nrs = "sudo nixos-rebuild switch --flake .";
+      nrt = "sudo nixos-rebuild test --flake .";
       ns = "nix-shell -p";
     };
   };
@@ -182,8 +185,8 @@
 	separator-foreground = "$\{colors.disabled\}";
 	separator-background = "$\{colors.background-alt\}";
 	modules-left = "xworkspaces";
-	modules-right = "xkeyboard battery1 battery0 tray date";
-	cursor-click = "pointer";
+	modules-right = "xkeyboard backlight battery1 battery0 tray date";
+	cursor-click = "pointer" ;
 	cursor-scroll = "ns-resize";
 	enable-ipc = true;
       };
@@ -275,6 +278,18 @@
 	tray-size = "100%";
 	tray-padding = 1;
 	tray-background = "$\{colors.background-alt\}";
+      };
+
+      "module/backlight" = {
+	type = "internal/backlight";
+	format = "<ramp>";
+	ramp-0 = "🌕";
+	ramp-1 = "🌔";
+	ramp-2 = "🌓";
+	ramp-3 = "🌒";
+	ramp-4 = "🌑";
+	format-background = "$\{colors.background-alt\}";
+	format-padding = 1;
       };
     };
   };
