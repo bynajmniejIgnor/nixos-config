@@ -96,6 +96,10 @@
 	}
 	{
 	  always = true;
+	  command = "nm-applet";
+	}
+	{
+	  always = true;
 	  command = "xset -b";
 	}
 	{
@@ -178,8 +182,7 @@
 	separator-foreground = "$\{colors.disabled\}";
 	separator-background = "$\{colors.background-alt\}";
 	modules-left = "xworkspaces";
-	modules-center = "blank";
-	modules-right = "xkeyboard battery1 battery0 date";
+	modules-right = "xkeyboard battery1 battery0 tray date";
 	cursor-click = "pointer";
 	cursor-scroll = "ns-resize";
 	enable-ipc = true;
@@ -265,6 +268,13 @@
 	label-indicator-off-capslock = "Caps off";
 	label-indicator-on-capslock-background = "$\{colors.alert\}";
 	label-indicator-off-capslock-background = "$\{colors.background-alt\}";
+      };
+
+      "module/tray" = {
+	type = "internal/tray";
+	tray-size = "100%";
+	tray-padding = 1;
+	tray-background = "$\{colors.background-alt\}";
       };
     };
   };
