@@ -168,6 +168,7 @@
 	alert = "#88ED8796";
 	disabled = "#707880";
 	success = "#88A6DA95";
+	special = "#887dc4e4";
       };
       "bar/top" = {
 	font-0 = "JetBrainsMonoNL Nerd Font Mono,JetBrainsMonoNL NFM,JetBrainsMonoNL NFM Medium:size=15;2";
@@ -182,8 +183,8 @@
 	border-size = "4pt";
     
 	border-color = "#00000000";
-	padding-left = 2;
-	padding-right = 2;
+	padding-left = 1;
+	padding-right = 1;
 	separator = "|";
 	separator-foreground = "$\{colors.disabled\}";
 	separator-background = "$\{colors.background-alt\}";
@@ -202,20 +203,20 @@
 	label-active = "%name%";
 	label-active-background = "$\{colors.background-alt\}";
 	label-active-underline= "$\{colors.primary\}";
-	label-active-padding = 2;
+	label-active-padding = 1;
 
 	label-occupied = "%name%";
 	label-occupied-background = "$\{colors.background-alt\}";
-	label-occupied-padding = 2;
+	label-occupied-padding = 1;
 
 	label-urgent = "%name%";
 	label-urgent-background = "$\{colors.alert\}";
-	label-urgent-padding = 2;
+	label-urgent-padding = 1;
 
 	label-empty = "%name%";
 	label-empty-background = "$\{colors.background-alt\}";
 	label-empty-foreground = "$\{colors.disabled\}";
-	label-empty-padding = 2;
+	label-empty-padding = 1;
       };
 
       "module/date" = {
@@ -234,7 +235,7 @@
 	battery = "BAT0";
 	poll-interval = 5;
 	
-	format-charging-background = "$\{colors.background-alt\}";
+	format-charging-background = "$\{colors.special\}";
 	format-discharging-background = "$\{colors.background-alt\}";
 	format-full-background = "$\{colors.success\}";
 	format-low = "<label-low>";
@@ -252,7 +253,7 @@
 	battery = "BAT1";
 	poll-interval = 5;
 
-	format-charging-background = "$\{colors.background-alt\}";
+	format-charging-background = "$\{colors.special\}";
 	format-discharging-background = "$\{colors.background-alt\}";
 	format-full-background = "$\{colors.success\}";
 	format-low = "<label-low>";
