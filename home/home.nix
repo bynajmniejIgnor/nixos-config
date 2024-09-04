@@ -107,9 +107,10 @@
 	  command = "pkill picom; picom";
 	}
       ];
+
       bars = [
-	{command = "pkill polybar; polybar top &";}
-      ];
+	{command = "pkill polybar; polybar -s & sleep 1 && pkill polybar && polybar &";} # The most elegant fix to polybar alsa
+      ];									 	 # module tripping at boot
     };
     extraConfig = '' 
       bindsym Mod4+F2 exec pamixer -d 5 
