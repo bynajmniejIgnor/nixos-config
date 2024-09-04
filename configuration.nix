@@ -24,6 +24,8 @@
       configurationLimit=10;
     };  
   };
+  boot.tmp.cleanOnBoot = true;
+
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
   
   networking.hostName = "nixos"; # Define your hostname.
