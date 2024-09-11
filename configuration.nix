@@ -154,7 +154,7 @@
     pamixer
     spotify
     steam
-    kicad
+    kicad-small
   ];
 
   programs.steam.enable = true;
