@@ -146,7 +146,7 @@
     shellAliases = {
       ra = "ranger --choosedir=$HOME/.rangerdir; LASTDIR=`cat $HOME/.rangerdir`; cd \"$LASTDIR\"";
       v = "nvim";
-      nrs = "sudo nixos-rebuild switch --flake .";
+      nrs = "sudo nixos-rebuild -vv switch --flake .";
       nrt = "sudo nixos-rebuild test --flake .";
       ns = "nix-shell -p";
     };
@@ -234,7 +234,7 @@
 	full-at = 90;
 	low-at = 10;
 	battery = "BAT0";
-	poll-interval = 5;
+	poll-interval = 1;
 	
 	format-charging-background = "$\{colors.special\}";
 	format-discharging-background = "$\{colors.background-alt\}";
@@ -252,7 +252,7 @@
 	full-at = 90;
 	low-at = 10;
 	battery = "BAT1";
-	poll-interval = 5;
+	poll-interval = 1;
 
 	format-charging-background = "$\{colors.special\}";
 	format-discharging-background = "$\{colors.background-alt\}";
@@ -280,7 +280,7 @@
 
       "module/tray" = {
 	type = "internal/tray";
-	tray-size = "80%";
+	tray-size = "100%";
 	tray-padding = 1;
 	tray-background = "$\{colors.background-alt\}";
       };
