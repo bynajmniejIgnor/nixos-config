@@ -280,7 +280,7 @@
 
       "module/tray" = {
 	type = "internal/tray";
-	tray-size = "100%";
+	tray-size = "80%";
 	tray-padding = 1;
 	tray-background = "$\{colors.background-alt\}";
       };

@@ -153,7 +153,11 @@
     pavucontrol
     pamixer
     spotify
+    steam
+    kicad
   ];
+
+  programs.steam.enable = true;
 
   # One true default editor
 
