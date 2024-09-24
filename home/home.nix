@@ -234,7 +234,7 @@
 	full-at = 90;
 	low-at = 10;
 	battery = "BAT0";
-	poll-interval = 1;
+	poll-interval = 5;
 	
 	format-charging-background = "$\{colors.special\}";
 	format-discharging-background = "$\{colors.background-alt\}";
@@ -252,7 +252,7 @@
 	full-at = 90;
 	low-at = 10;
 	battery = "BAT1";
-	poll-interval = 1;
+	poll-interval = 5;
 
 	format-charging-background = "$\{colors.special\}";
 	format-discharging-background = "$\{colors.background-alt\}";
