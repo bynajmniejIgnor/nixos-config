@@ -10,7 +10,7 @@
     
     keymaps = [
       {
-	action = ":Telescope find_files hidden=true<CR>";
+	action = ":Telescope live_grep search_dirs=.<CR>";
 	key = "<C-f>";
       }
     ];

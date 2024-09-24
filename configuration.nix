@@ -134,6 +134,7 @@
     polybar
     rofi
     ranger
+    ripgrep
 
     wget
     git
