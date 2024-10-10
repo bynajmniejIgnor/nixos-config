@@ -13,6 +13,10 @@
 	action = ":Telescope live_grep search_dirs=.<CR>";
 	key = "<C-f>";
       }
+      {
+	action = "\"+y<CR>";
+	key = "<C-c>";
+      }
     ];
 
     plugins = {
@@ -25,6 +29,9 @@
 	};
       };
       telescope = {
+	enable = true;
+      };
+      bufferline = {
 	enable = true;
       };
     };

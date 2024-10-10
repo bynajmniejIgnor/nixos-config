@@ -156,6 +156,7 @@
     spotify
     steam
     kicad-small
+    chromium
   ];
 
   programs.steam.enable = true;
